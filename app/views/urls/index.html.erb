@@ -1,0 +1,20 @@
+<h1>Url shortener</h1>
+<h3>All shorterned URLs</h3>
+
+<form>
+	<input type="text" name="long_url" placeholder="Paste a link to shortern it">
+	<input type="submit" value="Submit">
+</form>
+
+<p id="message"><%= @errors%></p>
+
+<div id="table-content">
+<table id="table" align="center">
+	<% Url.all.each do |x| %>
+	<tr>
+		<td><%= x.long_url%></td>
+		<td> <%= x.short_url %></td>
+	</tr>
+	<% end %>
+</table>
+</div>
